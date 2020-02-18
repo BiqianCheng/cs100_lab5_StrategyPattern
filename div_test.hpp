@@ -11,6 +11,7 @@ TEST(DIVTest, DIVEvaluateNonZero) {
     Op* value2 = new Op(4);
     DIV* test = new DIV(value1, value2);
     EXPECT_EQ(test->evaluate(), 5);
+    EXPECT_EQ(test->stringify(), value1->stringify() + "/" + value2->stringify());
 }
 
 #endif 

@@ -11,6 +11,7 @@ TEST(subTest, subEvaluateNonZero) {
     Op* value2 = new Op(8);
     Sub* test = new Sub(value1, value2);
     EXPECT_EQ(test->evaluate(), 4);
+    EXPECT_EQ(test->stringify(), value1->stringify() + "-" + value2->stringify());
 }
 
 #endif 

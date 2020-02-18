@@ -11,6 +11,7 @@ TEST(addTest, addEvaluateNonZero) {
     Op* value2 = new Op(12);
     ADD* test = new ADD(value1, value2);
     EXPECT_EQ(test->evaluate(), 20);
+    EXPECT_EQ(test->stringify(), value1->stringify() + "+" + value2->stringify());
 }
 
 #endif 

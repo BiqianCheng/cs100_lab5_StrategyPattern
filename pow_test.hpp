@@ -11,6 +11,7 @@ TEST(powTest, powEvaluateNonZero) {
     Op* value2 = new Op(3);
     POW* test = new POW(value1, value2);
     EXPECT_EQ(test->evaluate(), 8);
+    EXPECT_EQ(test->stringify(), value1->stringify() + "**" + value2->stringify());
 }
 
 #endif
