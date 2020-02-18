@@ -9,15 +9,23 @@
 TEST(VectorContainerTestSet, SwapTest) {
     // Setup the elements under test
     Op* seven = new Op(7);
+    Op* four = new Op(4);
+    Op* six = new Op(6);
+    Op* ten = new Op(10);
     VectorContainer* test_container = new VectorContainer();
 
     // Exercise some functionality of hte test elements
     test_container->add_element(seven);
+    test_container->add_element(four);
+    test_container->add_element(six);
+    test_container->add_element(ten);
+    test_container->swap(0,3);
+
 
     // Assert that the container has at least a single element
     // otherwise we are likely to cause a segfault when accessing
-    ASSERT_EQ(test_container->size(), 1);
-    EXPECT_EQ(test_container->at(0)->evaluate(), 7);
+    ASSERT_EQ(test_container->size(), 4);
+    EXPECT_EQ(test_container->at(0)->evaluate(), 10);
 }
 
 #endif
